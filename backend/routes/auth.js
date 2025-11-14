@@ -5,7 +5,7 @@ import User from "../models/User.js"; // ✅ import User model
 const router = express.Router();
 
 router.get("/github", (req, res) => {
-  const redirectUri = "http://localhost:5001/auth/github/callback";
+  const redirectUri = process.env.OAUTH_CALLBACK_URL || "http://localhost:5001/auth/github/callback";
   const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}&redirect_uri=${redirectUri}&scope=repo,user`;
   res.redirect(githubAuthUrl);
 });
@@ -48,7 +48,8 @@ router.get("/github/callback", async (req, res) => {
     );
 
     // ✅ 4️⃣ Redirect to frontend dashboard with username
-    res.redirect(`http://localhost:5173/dashboard?username=${githubUser.login}`);
+    const frontendUrl = process.env.FRONTEND_URL || "http://localhost:5173";
+    res.redirect(`${frontendUrl}/dashboard?username=${githubUser.login}`);
   } catch (err) {
     console.error("OAuth Error:", err.response?.data || err.message);
     res.status(500).json({ error: "OAuth flow failed" });
