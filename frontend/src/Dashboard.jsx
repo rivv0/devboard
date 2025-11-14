@@ -135,9 +135,14 @@ function Dashboard() {
             <h1 className="text-5xl font-light text-white tracking-tight" style={{ fontFamily: 'Inter, system-ui, sans-serif', fontWeight: 200 }}>
               devboard
             </h1>
-            <a href="/" className="text-base text-white/40 hover:text-white/60 transition">
-              logout
-            </a>
+            <div className="flex items-center gap-6">
+              <a href={`/wrapped?username=${githubUsername}`} className="text-base text-white/60 hover:text-white transition">
+                devwrapped
+              </a>
+              <a href="/" className="text-base text-white/40 hover:text-white/60 transition">
+                logout
+              </a>
+            </div>
           </div>
         </div>
 

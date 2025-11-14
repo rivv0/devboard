@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./Dashboard";
+import WrappedPage from "./WrappedPage";
 import P5Background from "./P5Background";
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           }
         />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/wrapped" element={<WrappedPage />} />
       </Routes>
     </BrowserRouter>
   );

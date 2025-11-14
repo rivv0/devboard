@@ -11,6 +11,7 @@ import leetcodeRoutes from "./routes/leetcode.js";
 import userRoutes from "./routes/user.js";
 import analyticsRoutes from "./routes/analytics.js";
 import codeQualityRoutes from "./routes/codeQuality.js";
+import wrappedRoutes from "./routes/wrapped.js";
 import User from "./models/User.js";
 
 dotenv.config();
@@ -32,6 +33,7 @@ app.use("/api/github", githubRoutes);
 app.use("/api/leetcode", leetcodeRoutes);
 app.use("/api/analytics", analyticsRoutes);
 app.use("/api/code-quality", codeQualityRoutes);
+app.use("/api/wrapped", wrappedRoutes);
 
 // ✅ Connect to MongoDB
 mongoose
