@@ -5,6 +5,7 @@ import P5Background from "./P5Background";
 import AnalyticsDashboard from "./components/AnalyticsDashboard";
 import CodeQualityTimeline from "./components/CodeQualityTimeline";
 import CodeQualityInsights from "./components/CodeQualityInsights";
+import { API_URL } from "./config";
 
 function Dashboard() {
   const [searchParams] = useSearchParams();
@@ -26,8 +27,8 @@ function Dashboard() {
   const fetchGitHubData = async () => {
     try {
       setSyncing(true);
-      await axios.get(`http://localhost:5001/api/github/sync/${githubUsername}`);
-      const res = await axios.get(`http://localhost:5001/api/github/activity/${githubUsername}`);
+      await axios.get(`${API_URL}/api/github/sync/${githubUsername}`);
+      const res = await axios.get(`${API_URL}/api/github/activity/${githubUsername}`);
       setGithubData(res.data);
       setSyncing(false);
     } catch (err) {
@@ -38,7 +39,7 @@ function Dashboard() {
 
   const fetchLeetCodeData = async () => {
     try {
-      const res = await axios.get(`http://localhost:5001/api/leetcode/activity/${githubUsername}`);
+      const res = await axios.get(`${API_URL}/api/leetcode/activity/${githubUsername}`);
       setLeetcodeData(res.data);
     } catch (err) {
       console.log("No LeetCode linked yet");
@@ -50,7 +51,7 @@ function Dashboard() {
     
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:5001/api/user/link-leetcode", {
+      const res = await axios.post(`${API_URL}/api/user/link-leetcode`, {
         githubUsername,
         leetcodeUsername,
       });

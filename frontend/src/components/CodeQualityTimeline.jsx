@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer, Legend } from "recharts";
 import axios from "axios";
+import { API_URL } from "../config";
 
 /**
  * Code Quality Timeline Component
@@ -23,7 +24,7 @@ function CodeQualityTimeline({ username }) {
     try {
       setLoading(true);
       const response = await axios.get(
-        `http://localhost:5001/api/code-quality/timeline/${username}?days=${days}`
+        `${API_URL}/api/code-quality/timeline/${username}?days=${days}`
       );
       setTimelineData(response.data);
       setLoading(false);
@@ -36,7 +37,7 @@ function CodeQualityTimeline({ username }) {
   const triggerAnalysis = async () => {
     try {
       setAnalyzing(true);
-      await axios.post(`http://localhost:5001/api/code-quality/analyze/${username}`, {
+      await axios.post(`${API_URL}/api/code-quality/analyze/${username}`, {
         limit: 10,
       });
       // Refresh timeline after analysis

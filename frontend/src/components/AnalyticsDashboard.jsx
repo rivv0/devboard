@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { API_URL } from "../config";
 import AnalyticsTrendChart from "./AnalyticsTrendChart";
 import ProductivityHeatmap from "./ProductivityHeatmap";
 import StatisticsCard from "./StatisticsCard";
@@ -29,7 +30,7 @@ function AnalyticsDashboard({ username }) {
 
       // Fetch GitHub analytics only
       const githubRes = await axios.get(
-        `http://localhost:5001/api/analytics/github/${username}${refreshParam}`
+        `${API_URL}/api/analytics/github/${username}${refreshParam}`
       );
 
       setGithubAnalytics(githubRes.data);

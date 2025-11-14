@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import axios from "axios";
 import P5Background from "./P5Background";
+import { API_URL } from "./config";
 
 const WrappedPage = () => {
   const [searchParams] = useSearchParams();
@@ -14,7 +15,7 @@ const WrappedPage = () => {
   const fetchWrapped = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`http://localhost:5001/api/wrapped/${githubUsername}`);
+      const response = await axios.get(`${API_URL}/api/wrapped/${githubUsername}`);
       setWrapped(response.data.wrapped);
     } catch (error) {
       console.error("Error fetching wrapped:", error);

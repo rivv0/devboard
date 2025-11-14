@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { API_URL } from "../config";
 
 /**
  * Code Quality Insights Component
@@ -19,7 +20,7 @@ function CodeQualityInsights({ username }) {
     try {
       setLoading(true);
       const response = await axios.get(
-        `http://localhost:5001/api/code-quality/insights/${username}`
+        `${API_URL}/api/code-quality/insights/${username}`
       );
       setInsights(response.data);
       setLoading(false);
