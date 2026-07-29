@@ -1,6 +1,6 @@
 # DevBoard - Developer Portfolio Platform
 
-A beautiful, minimal developer portfolio that showcases your GitHub activity, LeetCode stats, and generates a Spotify Wrapped-style year in review.
+A beautiful, minimal developer portfolio that showcases your GitHub activity, LeetCode stats and generates a Spotify Wrapped-style year in review.
 
 ## Features
 
@@ -9,28 +9,7 @@ A beautiful, minimal developer portfolio that showcases your GitHub activity, Le
 - **AI Code Analysis** - Get insights on your code quality
 - **DevWrapped** - Spotify Wrapped style year in review
 - **Analytics Dashboard** - Visualize your coding patterns
-- **Clean Aesthetic** - Minimal, professional design
 
-## Tech Stack
-
-**Frontend:**
-- React + Vite
-- TailwindCSS
-- Recharts
-- P5.js (background animations)
-
-**Backend:**
-- Node.js + Express
-- MongoDB + Mongoose
-- GitHub OAuth
-- OpenAI API (optional)
-
-## Quick Start
-
-### Prerequisites
-- Node.js 18+
-- MongoDB database
-- GitHub OAuth App
 
 ### Installation
 
@@ -74,16 +53,6 @@ PORT=5001
 VITE_API_URL=http://localhost:5001
 ```
 
-## Deployment
-
-See [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) for detailed deployment instructions.
-
-**Quick Deploy:**
-- Frontend: Vercel
-- Backend: Railway
-- Database: MongoDB Atlas
-
-## Usage
 
 1. **Sign in** with your GitHub account
 2. **Sync** your GitHub activity
@@ -118,22 +87,4 @@ See [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) for detailed deployment instruc
 - Productivity insights
 - Code quality metrics
 
-## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-MIT License - feel free to use this for your own portfolio!
-
-## Credits
-
-Built with ❤️ for developers who want to showcase their work beautifully.
-
-## Support
-
-For issues or questions, please open an issue on GitHub.
-
----
-
-**Made by developers, for developers** 🚀
